@@ -23,7 +23,8 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ## Regex Components
 
 ### Anchors
-
+There are two anchors used in regular expressions ^ and $. Anchors are characters that specify to look for the string that comes after (^) or before ($). 
+So, if your search was '^but', then just 'but' and 'but wait!' would come up; but not a capital 'But', because no one starts a sentence with 'but'. The main reason is because regex is case-sensitive.
 ### Quantifiers
 
 ### OR Operator
