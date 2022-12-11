@@ -124,35 +124,33 @@ Grouping constructs have two primary categories: capturing and non-capturing. Le
 
 ### Bracket Expressions
 
-Anything inside a set of square brackets ([]) represents a range of characters that we want to match. These patterns are known as bracket expressions, but they are also known as a positive character group, because they outline the characters we want to include. We can write these expressions to include all of the characters we want to match. For example, [abc] will look for a string that includes a or b or c, regardless of the length of the string. So all of the following examples would match: "aaa", "bin" "court", "abracadabra", and "bca".
+Anything inside a set of square brackets ([]). Wow go figure! What's inside of here represents a range of characters that we want to match. These patterns are known as bracket expressions, but they are also known as a positive character group, because they outline the characters we want to include. We can write these expressions to include all of the characters we want to match. For example, [abc] will look for a string that includes a or b or c, regardless of the length of the string. So all of the following examples would match: "aaa", "bin" "court", "abracadabra", and "bca".
 
-You'll more commonly see a hyphen (-) used between alphanumeric characters (letters and numbers only) to represent a range of those possible characters. This means that [a-c] and [abc] will look for the exact same thing.
+You'll commonly see a hyphen (-) used between alphanumeric characters to represent a range of those possible characters. This means that [a-c] and [abc] will look for the exact same thing.
 
-In our “Matching a Username” regex example, we can break down the bracket expressions as follows:
+In our regex example, we can break down the bracket expressions as follows:
 
-[a-z]—The string can contain any lowercase letter between a–z. Keep in mind that this looks for lowercase characters only. If we wanted to include uppercase characters, we would need to change the expression to [a-zA-Z].
+    /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
-[0-9]—The string can contain any number between 0–9
+[a-z] — The string can contain any lowercase letter between a–z. Keep in mind that this looks for lowercase characters only. If we wanted to include uppercase characters, we would need to change the expression to [a-zA-Z].
 
-[_-]—The string can contain an underscore or hyphen. Both the underscore and the hyphen are called special characters. Special characters include any non-alphanumeric characters, such as punctuation or symbols. In this case, we only want a string that includes _ or -. It's important to note that the hyphen here is not the same hyphen that we used in our alphanumeric ranges. In bracket expressions, special characters that we want to include follow alphanumeric character ranges within the brackets.
+[0-9] — The string can contain any number between 0–9
 
-If we put all of these expressions together so that our pattern is [a-z0-9_-], this will match any string that includes any combination of lowercase letters between a and z, any number between 0 and 9, and the special characters of an underscore or a hyphen. Keep in mind that these characters can be in any order. It's also important to note that this pattern does not require the string to meet all of these requirements; it can meet any of them.
+[_-] — The string can contain an underscore or hyphen. Both the underscore and the hyphen are called special characters. Special characters include any non-alphanumeric characters, such as punctuation or symbols. In this case, we only want a string that includes _ or -. It's important to note that the hyphen here is not the same hyphen that we used in our alphanumeric ranges. In bracket expressions, special characters that we want to include follow alphanumeric character ranges within the brackets.
+
+If we put all of these expressions together so that our pattern is ([a-z0-9_-]@[a-z0-9].[a-z], this will match any string that includes any combination of lowercase letters between a and z, any number between 0 and 9, and the special characters of an underscore or a hyphen. Keep in mind that these characters can be in any order. It's also important to note that this pattern does not require the string to meet all of these requirements; it can meet any of them.
 
 The following examples fulfill the requirements of this regex:
 
-"lernantino"
+"lernantino@yahoo.com"
 
-"lernantino1"
+"lernantino1@gmail.net"
 
-"l3rnantino_1"
+"l3rnantino_1@hotmail.com"
 
-"lern-antino"
+"lern-antino@bing.com"
 
-"21452"
-
-"_-_-"
-
-What about the string "Lernantino"? This would not match our pattern because it includes an uppercase character, L.
+What about the string "Lernantino@totally=madeup.com"? This would not match our pattern because it includes an uppercase character, L, and a character that isn't included '='.
 
 It's important to note that a bracket expression can be turned into a negative character group by adding the ^ symbol to the beginning of the expression inside the brackets. A common example is matching a string that doesn't include any vowels. The pattern [^aeiouAEIOU] would find any strings that don't include lowercase or uppercase vowels.
 
