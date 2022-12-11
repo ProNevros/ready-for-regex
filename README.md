@@ -109,6 +109,17 @@ The following example contains two grouping constructs or subexpressions:
 
 The first subexpression is looking for a part of the string that matches the string "abc" exactly. Similarly, the second subexpression is looking for "123". In between the subexpressions, we have a colon (:). Thus, the string "abc:123" would match, but the string "acb:123" would not.
 
+For our expression, you can see there's 3 sets of parenthesis. These are the subexpressions in our big boy expression.
+
+     /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
+([a-z0-9_\.-]+) - this is the first part of our email
+
+@([\da-z\.-]+) - this part is the domain name
+
+.([a-z\.]{2,6}) - and this is the '.net' or '.com' portion
+
+
 Grouping constructs have two primary categories: capturing and non-capturing. Learning how to use them both is a whole other tutorial. The important thing to know is that capturing groups capture the matched character sequences for possible re-use (including a numbered backreference) while non-capturing groups don't. You can make a group non-capturing with ?. Good thing our expression doesn't have that :D.
 
 ### Bracket Expressions
