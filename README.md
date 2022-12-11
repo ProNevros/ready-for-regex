@@ -57,15 +57,13 @@ These set the limit of the string, or section of it, that our regex will match. 
 
 ### OR Operator
 
-Remember that a bracket expression does not require the string to meet all of the requirements in the pattern. This means that [a-z0-9_-] searches for alphanumeric characters or the two special characters included in the pattern. Often, you'll want to add this same logic outside of a bracket expression, especially within a grouping construct or between two different grouping constructs.
+The OR operator (|), makes it so the string being looked for is less accurate. You must be thinking: "Why make it LESS accurate?" Because having options is beneficial when looking for data.
 
-Using the OR operator (|), the expression [abc] could be written as (a|b|c). Using our example in the grouping constructs section, we can take the original expression:
+For this example, we'll use: (abc):(123)
 
-(abc):(xyz)
-And then use the OR operator to convert it to the following:
+As is, the expression is ONLY looking for 'abc' and '123'. BUT with the or | operator, we can say (a|b|c):(1|2|3)
 
-(a|b|c):(x|y|z)
-Now, both of the strings "abc:xyz" and "acb:xyz" would match, as well as "a:z", but "xyz:abc" would not.
+This makes it so 'abc' and '123' are accepted; but it will also take 'cab' and '321' since it's less specific.
 
 ### Character Classes
 
