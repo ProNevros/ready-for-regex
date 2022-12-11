@@ -1,10 +1,12 @@
 # Ready for Regex!!
 
-So, you wanna learn about regex. What even is that? How do you use it? Is it a videogame item? All valid questions; and questions I had when I first heard about this. This is where I've done research into the topic myself so I can return to you what I've gathered. I hope this is helpful to you  as it was for me.
+So, you wanna learn about regex. What even is that? How do you use it? Is it a videogame item? All valid questions; and questions I had when I first heard about this. ESPECIALLY the videogame item part. Sounds like a cool weapon, honestly.
+
+ This is where I've done research into the topic myself so I can return to you what I've gathered. I hope this is helpful to you  as it was for me. Down below are the different parts that make up a regex. Let's get started!
 
 ## Summary
 
-Regex is short for 'regular expression', which is a string of characters used to search certain patterns. Very similiar to using the 'Find' tool on a website, except this can also validate things like passwords and email addresses. Super helpful for data.
+Regex is short for 'regular expression', which is a string of characters used to search certain patterns. Very similiar to using the 'Find' tool on a website, except this can also validate things like passwords and email addresses. Super helpful for data. Here's an example:
 
 /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
@@ -28,8 +30,12 @@ I know it looks like my cat jumped on my keyboard; but this is an example of a r
 
 ### Anchors
 
-There are two anchors used in regular expressions ^ and $. Anchors are characters that specify to look for the string that comes after (^) or before ($). 
+There are two anchors used in regular expressions ^ and $. Anchors are characters that specify to look for the string that comes after (^) or before ($) the anchor. 
 So, if your search was '^but', then just 'but' and 'but wait!' would come up; but not a capital 'But', because no one starts a sentence with 'but'. The main reason is because regex is case-sensitive.
+
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
+So in this expression, the two aanchors are at the beginning and end of the sequence. Meaning It's specifically looking for everything in between. Super helpful, I know.
 
 ### Quantifiers
 
