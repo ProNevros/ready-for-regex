@@ -41,19 +41,19 @@ So in this expression, the two aanchors are at the beginning and end of the sequ
 
 These set the limit of the string, or section of it, that our regex will match. You know how when you make a new account and it says it must be '6' characters long? This a quantifer at work. 
 
-*—Matches the pattern zero or more times
+    * — Matches the pattern zero or more times
 
-+—Matches the pattern one or more times
+    +  Matches the pattern one or more times
 
-?—Matches the pattern zero or one time
+    ? — Matches the pattern zero or one time
 
-{}—Curly brackets can provide three different ways to set limits for a match:
+    {} — Curly brackets can provide three different ways to set limits for a match:
 
-    { n }—Matches the pattern exactly n number of times
+    { n } — Matches the pattern exactly n number of times
 
-    { n, }—Matches the pattern at least n number of times
+    { n, } — Matches the pattern at least n number of times
 
-    { n, x }—Matches the pattern from a minimum of n number of times to a maximum of x number of times
+    { n, x } — Matches the pattern from a minimum of n number of times to a maximum of x number of times
 
 ### OR Operator
 
