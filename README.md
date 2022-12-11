@@ -99,16 +99,17 @@ I mentioned earlier on that regexes are a literal, and a regex must be wrapped i
 
 ### Grouping and Capturing
 
-The “Matching a Username” regex is fairly straightforward and open-ended about what it accepts. As regular expressions grow more complicated, you may check multiple parts of a string to determine that different sections fulfill different requirements. To break these sections up, you'll need to use grouping constructs.
+The Example we use is a whole mess. We understand small parts individually, and that's exactly what we want. A lot of the times, we need to seperate what parts have certain characters and symbols.
 
 The primary way you group a section of a regex is by using parentheses (()). Each section within parentheses is known as a subexpression.
 
 The following example contains two grouping constructs or subexpressions:
 
-(abc):(xyz)
-The first subexpression is looking for a part of the string that matches the string "abc" exactly. Similarly, the second subexpression is looking for "xyz". In between the subexpressions, we have a colon (:). Thus, the string "abc:xyz" would match, but the string "acb:xyz" would not. Unlike bracket expressions, subexpressions look for an exact match unless they're told to do otherwise.
+    (abc):(123)
 
-Grouping constructs have two primary categories: capturing and non-capturing. The details about how capturing and non-capturing groups are used are beyond the scope of this tutorial. The important thing to understand is that capturing groups capture the matched character sequences for possible re-use (including a numbered backreference) while non-capturing groups do not. A grouping construct can be made non-capturing by adding the characters ?: at the beginning of an expression inside the parentheses.
+The first subexpression is looking for a part of the string that matches the string "abc" exactly. Similarly, the second subexpression is looking for "123". In between the subexpressions, we have a colon (:). Thus, the string "abc:123" would match, but the string "acb:123" would not.
+
+Grouping constructs have two primary categories: capturing and non-capturing. Learning how to use them both is a whole other tutorial. The important thing to know is that capturing groups capture the matched character sequences for possible re-use (including a numbered backreference) while non-capturing groups don't. You can make a group non-capturing with ?. Good thing our expression doesn't have that :D.
 
 ### Bracket Expressions
 
