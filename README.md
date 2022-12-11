@@ -156,6 +156,17 @@ It's important to note that a bracket expression can be turned into a negative c
 
 ### Greedy and Lazy Match
 
+Alright, these are weird. In its simplest form, if a match is 'greedy', it will want to look for as many characters taht match as possible. If it's 'lazy', then it will want to look for as few characters as possible.
+
+    .+ - this is used for greedy
+    .+? - this is used for lazy
+
+Our Expression has these!
+
+    /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
+You'd THINK it means subexpression + @subexpression + .subexpression; but it's actually looking for any number of characters that fit the paramaters of the sub expression. This makes it easy to find long emails. Probably all the dummy emails people use for Netflix trials.
+
 ### Boundaries
 
 ### Back-references
