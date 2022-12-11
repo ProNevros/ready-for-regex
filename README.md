@@ -31,11 +31,13 @@ I know it looks like my cat jumped on my keyboard; but this is an example of a r
 ### Anchors
 
 There are two anchors used in regular expressions ^ and $. Anchors are characters that specify to look for the string that comes after (^) or before ($) the anchor. 
-So, if your search was '^but', then just 'but' and 'but wait!' would come up; but not a capital 'But', because no one starts a sentence with 'but'. The main reason is because regex is case-sensitive.
+So, if your search was '^but', then just 'but' and 'but wait!' would come up; but not a capital 'But', because no one starts a sentence with 'but'. The main reason is because regex is case-sensitive. 
 
-/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+    /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 So in this expression, the two aanchors are at the beginning and end of the sequence. Meaning It's specifically looking for everything in between. Super helpful, I know.
+
+There's also slashes around the anchors. Regexes MUST be wrapped in slashes because it is a literal.
 
 ### Quantifiers
 
@@ -59,9 +61,13 @@ These set the limit of the string, or section of it, that our regex will match. 
 
 The OR operator (|), makes it so the string being looked for is less accurate. You must be thinking: "Why make it LESS accurate?" Because having options is beneficial when looking for data.
 
-For this example, we'll use: (abc):(123)
+For this example, we'll use: 
 
-As is, the expression is ONLY looking for 'abc' and '123'. BUT with the or | operator, we can say (a|b|c):(1|2|3)
+    (abc):(123)
+
+As is, the expression is ONLY looking for 'abc' and '123'. BUT with the or | operator, we can say:
+
+    (a|b|c):(1|2|3)
 
 This makes it so 'abc' and '123' are accepted; but it will also take 'cab' and '321' since it's less specific.
 
@@ -71,25 +77,25 @@ A character class in a regex defines a set of characters, any one of which can o
 
 Here are some of the other common character classes:
 
-.—Matches any character except the newline character (\n)
+    . — Matches any character except the newline character (\n)
 
-\d—Matches any Arabic numeral digit. This class is equivalent to the bracket expression [0-9].
+    \d — Matches any Arabic numeral digit. This class is equivalent to the bracket expression [0-9].
 
-\w—Matches any alphanumeric character from the basic Latin alphabet, including the underscore (_). This class is equivalent to the bracket expression [A-Za-z0-9_].
+    \w — Matches any alphanumeric character from the basic Latin alphabet, including the underscore (_). This class is equivalent to the bracket expression [A-Za-z0-9_].
 
-\s—Matches a single whitespace character, including tabs and line breaks
+    \s — Matches a single whitespace character, including tabs and line breaks
 
 Each of the last three character classes can be changed to perform an inverse match by capitalizing the letter character. For example, \D matches a non-digit character.
 
 ### Flags
 
-We started this tutorial by explaining that as a literal, a regex must be wrapped in slash characters. The one exception to this rule is with the component known as flags. Flags are placed at the end of a regex, after the second slash, and they define additional functionality or limits for the regex. There are six optional flags that can be used, either separately or together and in any order, but these are the three you're most likely to encounter:
+I mentioned earlier on that regexes are a literal, and a regex must be wrapped in slash characters. PLOT TWIST: There's an exception to that rule. The one exception to this rule is with the component known as flags. Flags are placed at the end of a regex, after the second slash, and they define additional functionality or limits for the regex. There are six optional flags that can be used, either separately or together and in any order, but these are the three you're most likely to encounter:
 
-g—Global search: the regex should be tested against all possible matches in a string.
+    g — Global search: the regex should be tested against all possible matches in a string.
 
-i—Case-insensitive search: case should be ignored while attempting a match in a string
+    i — Case-insensitive search: case should be ignored while attempting a match in a string
 
-m—Multi-line search: a multi-line input string should be treated as multiple lines
+    m — Multi-line search: a multi-line input string should be treated as multiple lines
 
 ### Grouping and Capturing
 
