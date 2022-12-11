@@ -138,7 +138,7 @@ In our regex example, we can break down the bracket expressions as follows:
 
 [_-] — The string can contain an underscore or hyphen. Both the underscore and the hyphen are called special characters. Special characters include any non-alphanumeric characters, such as punctuation or symbols. In this case, we only want a string that includes _ or -. It's important to note that the hyphen here is not the same hyphen that we used in our alphanumeric ranges. In bracket expressions, special characters that we want to include follow alphanumeric character ranges within the brackets.
 
-If we put all of these expressions together so that our pattern is ([a-z0-9_-]@[a-z0-9].[a-z], this will match any string that includes any combination of lowercase letters between a and z, any number between 0 and 9, and the special characters of an underscore or a hyphen. Keep in mind that these characters can be in any order. It's also important to note that this pattern does not require the string to meet all of these requirements; it can meet any of them.
+If we put all of these expressions together so that our pattern is ([a-z0-9_-]@[a-z0-9].[a-z], this will match any string that includes any combination of lowercase letters between a and z, any number between 0 and 9, and the special characters of an underscore or a hyphen. Keep in mind that these characters can be in any order. It's also important to note that this pattern doesn't require the string to meet all of these requirements; it can meet any of them.
 
 The following examples fulfill the requirements of this regex:
 
@@ -150,7 +150,7 @@ The following examples fulfill the requirements of this regex:
 
 "lern-antino@bing.com"
 
-What about the string "Lernantino@totally=madeup.com"? This would not match our pattern because it includes an uppercase character, L, and a character that isn't included '='.
+What about the string "Lernantino@totally=madeup.com"? This wouldn't match our pattern because it includes an uppercase character, L, and a character that isn't included '='.
 
 It's important to note that a bracket expression can be turned into a negative character group by adding the ^ symbol to the beginning of the expression inside the brackets. A common example is matching a string that doesn't include any vowels. The pattern [^aeiouAEIOU] would find any strings that don't include lowercase or uppercase vowels.
 
@@ -177,4 +177,4 @@ A word boundary, in most regex dialects, is a position between \w (word char) an
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Thanks for the read!! I hope this helped you understand the basics of a regex. If not, well I made this in a rush. You can find me here on [GitHub](https://github.com/ProNevros)
