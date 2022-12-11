@@ -43,7 +43,7 @@ These set the limit of the string, or section of it, that our regex will match. 
 
     * — Matches the pattern zero or more times
 
-    +  Matches the pattern one or more times
+    + — Matches the pattern one or more times
 
     ? — Matches the pattern zero or one time
 
