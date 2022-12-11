@@ -169,6 +169,8 @@ You'd THINK it means subexpression + @subexpression + .subexpression; but it's a
 
 ### Boundaries
 
+A word boundary, in most regex dialects, is a position between \w (word char) and \W (non-word char), or at the beginning or end of a string if it begins or ends (respectively) with a word character ([0-9A-Za-z_]). We don't have these, thankfully!
+
 ### Back-references
 
 ### Look-ahead and Look-behind
